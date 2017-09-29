@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void buscarEmpresas(){
 
-        Toast.makeText(MainActivity.this, "This is my Toast message!",
-                Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "This is my Toast message!",Toast.LENGTH_SHORT).show();
 
 
 

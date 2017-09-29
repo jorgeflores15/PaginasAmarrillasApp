@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.titulo_empresa.setText(listaEmpresas.get(position).getNombre());
         holder.direccion_empresa.setText(listaEmpresas.get(position).getDireccion());
-        //holder.telefono_empresa.setText(listaEmpresas.get(position).getTelefono());
+        holder.telefono_empresa.setText(listaEmpresas.get(position).getCorreo());
         holder.img_empresa.setImageResource(listaEmpresas.get(position).getLogo());
     }
 }

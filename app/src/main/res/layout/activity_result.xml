@@ -7,17 +7,25 @@
     tools:context="app.flores.com.paginasamarrillasapp.ResultActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#70dddddd"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/inputRespuesta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/inputRespuesta"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-         />
 
 </LinearLayout>
