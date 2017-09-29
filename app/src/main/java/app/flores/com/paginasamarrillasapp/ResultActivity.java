@@ -1,8 +1,12 @@
 package app.flores.com.paginasamarrillasapp;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,21 +20,9 @@ public class ResultActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
     private String valor;
+    private CardView cardView;
 
     private TextView inputRespuesta;
-
-    private class EmpresaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public EmpresaViewHolder(View v) {
-            super(v);
-            v.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-            Toast.makeText(getApplicationContext(),
-                    "You have clicked " + ((TextView) v).getText(),Toast.LENGTH_LONG).show();
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +31,7 @@ public class ResultActivity extends AppCompatActivity {
 
         // Obtener el Recycler
         recycler = (RecyclerView) findViewById(R.id.recyclerView);
+        cardView = (CardView) findViewById(R.id.cardView);
         recycler.setHasFixedSize(true);
 
         // Usar un administrador para LinearLayout
@@ -50,15 +43,32 @@ public class ResultActivity extends AppCompatActivity {
 
         List<Empresa> empresas = em.getEmpresasLista();
 
-        TextView inputRespuesta = (TextView) findViewById(R.id.inputRespuesta);
-
+       inputRespuesta = (TextView) findViewById(R.id.inputRespuesta);
 
         valor = getIntent().getStringExtra("busqueda");
-
 
         adapter = new RecyclerViewAdapter(filtroDeEmpresas(empresas, valor));
 
         recycler.setAdapter(adapter);
+        recycler.setItemViewCacheSize(0);
+        recycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //irDetalle(v);
+                Toast.makeText(getApplicationContext(),"You have clicked ",Toast.LENGTH_SHORT).show();
+               Log.i("DemoRecView", "Pulsado el elemento " + recycler.getChildPosition(v));
+            }
+        });
+/*
+       cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(ResultActivity.this,DetailActivity.class);
+                intent.putExtra("nombree","2dd");
+                startActivity(intent);
+
+            }
+        });*/
 
         inputRespuesta.setText("Hay "+adapter.getItemCount()+" resultados para su busqueda: "+valor);
     }
@@ -75,4 +85,23 @@ public class ResultActivity extends AppCompatActivity {
         }
         return filtroDeEmpresas;
     }
+
+    private class Rec extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public Rec(View v) {
+            super(v);
+            v.setOnClickListener(this);
+            Toast.makeText(getApplicationContext(),"You have clicked " + ((TextView) v).getText(),Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(getApplicationContext(),"You have clicked " + ((TextView) v).getText(),Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void irDetalle (View v){
+        Toast.makeText(getApplicationContext(),"You have clicked ",Toast.LENGTH_SHORT).show();
+    }
+
+
+
 }

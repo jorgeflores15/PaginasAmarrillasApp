@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PaginasAmarrillasApp</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="activity_main_buscar">buscar</string>
+    <string name="activity_main_tvbusca">Que Busca:</string>
+    <string name="detail_activity_informacion">Informacion:</string>
 </resources>

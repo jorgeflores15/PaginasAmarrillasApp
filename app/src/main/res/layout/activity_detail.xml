@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.flores.com.paginasamarrillasapp.DetailActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:id="@+id/titulo_empresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Titulo de la empresa"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:padding="9dp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/direccion_empresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Direccion"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/telefono_empresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Telefono"
+                    android:padding="2dp"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/categoria_empresa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo"
+                    android:paddingStart="10dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/img_empresa"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/bg_fondo_imagen"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginTop="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_activity_informacion"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="HipHop Mixtapes
+                Hace 1 año D12 IS BACK! The new Devil's Night mixtape just dropped. Check it out on my channel! "
+            android:layout_margin="30dp"
+            android:textAlignment="viewStart"
+            />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/btnWebsite"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_public"/>
+                    <ImageButton
+                        android:id="@+id/btnEmail"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_email"
+                        />
+                    <ImageButton
+                        android:id="@+id/btnSms"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_sms"/>
+                    <ImageButton
+                        android:id="@+id/btnCompartir"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_share"/>
+                    <ImageButton
+                        android:id="@+id/btnLlamar"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_call"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

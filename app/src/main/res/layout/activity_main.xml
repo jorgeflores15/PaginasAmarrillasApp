@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Que Busca:" />
+                android:text="@string/activity_main_tvbusca" />
 
             <EditText
                 android:id="@+id/inputBuscar"
@@ -36,7 +36,7 @@
                 android:textColor="#ffffffff"
                 android:textSize="16dp"
                 android:layout_marginTop="10dp"
-                android:text="Buscar" />
+                android:text="@string/activity_main_buscar" />
 
         </LinearLayout>
 
