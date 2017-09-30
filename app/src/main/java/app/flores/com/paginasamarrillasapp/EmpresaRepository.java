@@ -13,7 +13,7 @@ public class EmpresaRepository {
         return _INSTANCE;
     }
 
-    public List<Empresa> getEmpresasLista() {
+    private EmpresaRepository(){
         empresasLista.add(new Empresa(100,"Restaurantes","Compañia del Sabor","Tr93 53-48 Int 84",012242625,"informes@companiadelsabor.com",
                 "www.companiadelsabor.com",R.drawable.bg_fondo_imagen,"El Sabor Original del Pollo Desde…"));
         empresasLista.add(new Empresa(101,"Restaurantes","Lima Limon","Naciones Unidas 1709",012242325,"informes@limalimon.com",
@@ -34,7 +34,8 @@ public class EmpresaRepository {
                 "www.companiadelsabor.com",R.drawable.bg_fondo_imagen,"El Sabor Original del Pollo Desde…"));
         empresasLista.add(new Empresa(109,"Diversion","Playboy","Tr93 53-48 Int 84",012242625,"informes@playboy.com",
                 "www.companiadelsabor.com",R.drawable.bg_fondo_imagen,"El Sabor Original del Pollo Desde…"));
-
+    }
+    public List<Empresa> getEmpresasLista() {
         return empresasLista;
     }
 }

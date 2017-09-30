@@ -3,7 +3,9 @@ package app.flores.com.paginasamarrillasapp;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +60,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.direccion_empresa.setText(listaEmpresas.get(position).getDireccion());
         holder.telefono_empresa.setText(listaEmpresas.get(position).getCorreo());
         holder.img_empresa.setImageResource(listaEmpresas.get(position).getLogo());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),DetailActivity.class);
+                intent.putExtra("id",listaEmpresas.get(position).getId());
+                intent.putExtra("rubro",listaEmpresas.get(position).getRubro());
+                intent.putExtra("nombre",listaEmpresas.get(position).getNombre());
+                intent.putExtra("direccion",listaEmpresas.get(position).getDireccion());
+                intent.putExtra("telefono",listaEmpresas.get(position).getTelefono());
+                intent.putExtra("correo",listaEmpresas.get(position).getCorreo());
+                intent.putExtra("url",listaEmpresas.get(position).getUrl());
+                intent.putExtra("logo",listaEmpresas.get(position).getLogo());
+                intent.putExtra("info",listaEmpresas.get(position).getInfo());
+                view.getContext().startActivity(intent);
+
+            }
+        });
 
     }
 }

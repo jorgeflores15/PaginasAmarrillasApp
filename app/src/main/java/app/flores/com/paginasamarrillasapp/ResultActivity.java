@@ -51,24 +51,6 @@ public class ResultActivity extends AppCompatActivity {
 
         recycler.setAdapter(adapter);
         recycler.setItemViewCacheSize(0);
-        recycler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //irDetalle(v);
-                Toast.makeText(getApplicationContext(),"You have clicked ",Toast.LENGTH_SHORT).show();
-               Log.i("DemoRecView", "Pulsado el elemento " + recycler.getChildPosition(v));
-            }
-        });
-/*
-       cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(ResultActivity.this,DetailActivity.class);
-                intent.putExtra("nombree","2dd");
-                startActivity(intent);
-
-            }
-        });*/
 
         inputRespuesta.setText("Hay "+adapter.getItemCount()+" resultados para su busqueda: "+valor);
     }
